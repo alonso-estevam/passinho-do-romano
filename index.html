@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passinho do Romano</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <header>
+        <h1>Passinho do Romano</h1>
+        <h2>Codifique e decodifique mensagens usando dois métodos marotos: a <strong>Cifra de César</strong> e a <strong>Base64</strong></h2>
+    </header>
+    <main>
+        <fieldset>
+            <form action="" class="form">
+                <label for="">Digite a mensagem</label>
+                <textarea id="msg" class="msg" name="msg" placeholder="Digite a mensagem aqui"></textarea>
+                <label for="">Escolha o método:</label>
+                <select name="" id="selection" class="selection">
+                    <option value="1" id="cifraDeCesar" class="value">Cifra de César</option>
+                    <option value="2" id="base64" class="value">Base64</option>
+                </select>
+                <div class="key" id="key"> <!-- deu certo a função pra esconder quando coloquei a id nessa div -->
+                    <label for="">Selecione o número de passinhos</label>
+                    <input type="number" class="keyBox" min="1" max="25">
+                </div>
+            </form>
+        </fieldset>
+    </main>
+    <footer>
+        Desenvolvido exclusivamente para fins didáticos, por Alonso Estevam | Resilia - T17
+    </footer>
+    <script src="index.js"></script>
+</body>
+</html>
