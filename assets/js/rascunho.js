@@ -70,35 +70,83 @@ console.log(vowels); // array com os elementos reordenados de acordo com a chave
 
 // TERCEIRA TENTATIVA
 
-var vowels = ['a','e','i','o','u'];
+// var vowels = ['a','e','i','o','u'];
 
-var key = 3 // essa variável receberá o input do user para o incremento
-var positionParameter = 4 - (key-1) // configura o primeiro parâmetro da .splice() para remover os elementos. A posição do parâmetro nesse caso é 4 porque é o último índice desse array de cinco elementos.
-var last = vowels.splice(positionParameter,key).toString() // remove os n últimos elementos. Nesse caso, imprime o,u (string)
+// var key = 3 // essa variável receberá o input do user para o incremento
+// var positionParameter = 4 - (key-1) // configura o primeiro parâmetro da .splice() para remover os elementos. A posição do parâmetro nesse caso é 4 porque é o último índice desse array de cinco elementos.
+// var last = vowels.splice(positionParameter,key).toString() // remove os n últimos elementos. Nesse caso, imprime o,u (string)
 
-var newVowels = [...last,...vowels]; // fusão de arrays com spread syntax
+// var newVowels = [...last,...vowels]; // fusão de arrays com spread syntax
 
-//vowels.splice(0,0,last) // adiciona os elementos retirados das últimas posições no começo do array. 
+// //vowels.splice(0,0,last) // adiciona os elementos retirados das últimas posições no começo do array. 
 
-//var newVowelsWithoutComma = newVowels.filter((item, i) => newVowels.indexOf(item) === i);
+// //var newVowelsWithoutComma = newVowels.filter((item, i) => newVowels.indexOf(item) === i);
 
-function removeComma (arr) {
-    for (i = 0; i <= arr.length; i++) {
-        let index = arr.indexOf(',');
-        if (index > -1) {
-            newArr = arr.splice(index,1);
-        }
+// function removeComma (arr) {
+//     for (i = 0; i <= arr.length; i++) {
+//         let index = arr.indexOf(',');
+//         if (index > -1) {
+//             newArr = arr.splice(index,1);
+//         }
+//     }
+//     return arr;
+// }
+
+// console.log(removeComma (newVowels)); // finalmente, resolveu o bug das vírgulas
+
+// //console.log(newVowels); // array com os elementos reordenados de acordo com a chave
+// // estava imprimindo assim:
+// /* [
+//   'i', ',', 'o',
+//   ',', 'u', 'a',
+//   'e'
+// ]
+// */
+
+
+
+// QUARTA TENTATIVA
+let msg = 'pastel e cuscuz'; // variável que recebe a string da mensagem
+
+let arr = msg.split('') // converte a string em array
+
+let arrCharCode = arr.map(function(item) {
+    return item.charCodeAt() // retorna o unicode dos itens do array
+}) 
+console.log(arrCharCode); 
+
+let key = 3;
+
+let newArrCharCode = arrCharCode.map(function(item){
+    if(item == 32) {
+        return item = 32;
+    } else {
+        return (((item - 97) + key) % 26) + 97
     }
-    return arr;
-}
+})
 
-console.log(removeComma (newVowels)); // finalmente, resolveu o bug das vírgulas
+console.log(newArrCharCode); //retorna o novo unicode após a soma dos passos
 
-//console.log(newVowels); // array com os elementos reordenados de acordo com a chave
-// estava imprimindo assim:
-/* [
-  'i', ',', 'o',
-  ',', 'u', 'a',
-  'e'
-]
-*/
+let codedArr = newArrCharCode.map(function (item) {
+    // retorna o caractere correspondente ao novo unicode
+    return String.fromCharCode(item);
+})
+
+// converte os itens do array codificados em uma única string
+let codedMsg = codedArr.join('')
+console.log(codedArr);
+console.log(codedMsg);
+
+console.log(' '.charCodeAt());
+
+
+// fórmula
+// (codigoDaLetraASC - codigo1aLetra + passo) % 26) + cod1aLetra
+
+// function codeMsg (codASC, key) {
+//     return (((codASC - 97) + key) % 26) + 97
+// }
+
+// arrCharCode.map(function(codASC, key) {
+//     return (((codASC - 97) + key) % 26) + 97
+// })

@@ -25,7 +25,7 @@
                 <li>escolha se quer <strong>codificar</strong> ou <strong>decodificar</strong> uma mensagem;</li>
                 <li>selecione o método - Cifra de César ou Base64;</li>
                 <li>se optar pela <strong>Cifra de César</strong>, escolha também o número de passinhos (<strong>chave</strong>);</li>
-                <li>digite o texto da mensagem (<strong>somente letras minúsculas!</strong>)</li>
+                <li>digite o texto da mensagem (<strong>somente letras minúsculas e espaços!</strong>)</li>
                 <li>clique no botão de codificar/decodificar.</li>
             </ol>
         </div>
@@ -55,9 +55,11 @@
                     <input type="number" id="keyBox" class="msg keyBox" min="1" max="25">
                 </div>
 
-                <label for="msg-input">Digite a mensagem:</label>
+                <label for="msg-input">Digite a mensagem: <br>
+                (não coloque caracteres especiais, acentos, ponto ou vírgula)</label>
                 <textarea id="msg-input" class="msg" name="msg-output" rows="5" placeholder="Digite a mensagem aqui"></textarea>
-                <button id="btn" class="btn" type="submit" value="codificar!">codificar mensagem!</button>
+
+                <button id="btn" class="btn" type="submit" value="">codificar mensagem!</button>
 
                 <label for="msg-output">Veja o resultado:</label>
                 <textarea id="msg-output" name="msg-output" class="msg" rows="5" placeholder="O resultado vai aparecer aqui"></textarea>
