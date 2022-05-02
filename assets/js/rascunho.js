@@ -66,20 +66,9 @@ console.log(vowels); // array com os elementos reordenados de acordo com a chave
 // let codedMsg = codedArr.join(''); 
 
 // console.log(codedMsg);
-
+//--------------------------------------------------------------
 
 // TERCEIRA TENTATIVA
-
-// var arrayA = ['o','u'];
-// var arrayB = ['a','e','i'];
-// var arrayC ;
-
-// console.log("Array A > "+arrayA);
-// console.log("Array B > "+arrayB);
-
-// //merging using the spread syntax
-// arrayC = [...arrayA,...arrayB];
-// console.log(arrayC);
 
 var vowels = ['a','e','i','o','u'];
 
@@ -93,6 +82,23 @@ var newVowels = [...last,...vowels]; // fusão de arrays com spread syntax
 
 //var newVowelsWithoutComma = newVowels.filter((item, i) => newVowels.indexOf(item) === i);
 
+function removeComma (arr) {
+    for (i = 0; i <= arr.length; i++) {
+        let index = arr.indexOf(',');
+        if (index > -1) {
+            newArr = arr.splice(index,1);
+        }
+    }
+    return arr;
+}
 
+console.log(removeComma (newVowels)); // finalmente, resolveu o bug das vírgulas
 
-console.log(newVowels); // array com os elementos reordenados de acordo com a chave
+//console.log(newVowels); // array com os elementos reordenados de acordo com a chave
+// estava imprimindo assim:
+/* [
+  'i', ',', 'o',
+  ',', 'u', 'a',
+  'e'
+]
+*/

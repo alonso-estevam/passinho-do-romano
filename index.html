@@ -4,34 +4,84 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Radio+Canada:wght@400;700&family=Yatra+One&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="assets/img/caesar.png" type="image/x-icon">
     <title>Passinho do Romano</title>
-    <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <header>
-        <h1>Passinho do Romano</h1>
-        <h2>Codifique e decodifique mensagens usando dois métodos marotos: a <strong>Cifra de César</strong> e a <strong>Base64</strong></h2>
+    <header class="header">
+        <img class="logo"src="assets/img/caesar.png" alt="perfil de Júlio César">
+        <h1 class="title">Passinho do Romano</h1>
     </header>
+    <p>Codifique e decodifique mensagens usando dois métodos marotos: a <strong>Cifra de César</strong> e a <strong>Base64</strong>.</p>
+    <section>
+        <div class="subtitle">
+            <h2>Como funciona?</h2>
+            <img class="logo" src="assets/img/gladiator.png" alt="capacete de gladiador romano">
+        </div>
+        <div class="list">
+            <ol>
+                <li>escolha se quer <strong>codificar</strong> ou <strong>decodificar</strong> uma mensagem;</li>
+                <li>selecione o método - Cifra de César ou Base64;</li>
+                <li>se optar pela <strong>Cifra de César</strong>, escolha também o número de passinhos (<strong>chave</strong>);</li>
+                <li>digite o texto da mensagem (<strong>somente letras minúsculas!</strong>)</li>
+                <li>clique no botão de codificar/decodificar.</li>
+            </ol>
+        </div>
+    </section>
     <main>
-        <fieldset>
-            <form action="" class="form">
-                <label for="">Digite a mensagem</label>
-                <textarea id="msg" class="msg" name="msg" placeholder="Digite a mensagem aqui"></textarea>
-                <label for="">Escolha o método:</label>
-                <select name="" id="selection" class="selection">
+        <div class="subtitle">
+            <img src="assets/img/cifra-de-cesar.png" alt="">
+            <h2>Mãos à cifra!</h2>
+        </div>
+        <form action="#" class="form">
+            <fieldset>
+                <div>
+                    <label for="code">Você quer:</label>
+                    <input type="radio" name="de-code" id="code" value="codificar">
+                    <label for="code">codificar</label>
+                    <input type="radio" name="de-code" id="decode" value="decodificar">
+                    <label for="decode">decodificar</label>
+                </div>
+
+                <label for="selection">Escolha o método:</label>
+                <select name="selection" id="selection" class="selection">
                     <option value="1" id="cifraDeCesar" class="value">Cifra de César</option>
                     <option value="2" id="base64" class="value">Base64</option>
                 </select>
                 <div class="key" id="key"> <!-- deu certo a função pra esconder quando coloquei a id nessa div -->
-                    <label for="">Selecione o número de passinhos</label>
-                    <input type="number" class="keyBox" min="1" max="25">
+                    <label for="keyBox">Selecione o número de passinhos:</label>
+                    <input type="number" id="keyBox" class="msg keyBox" min="1" max="25">
                 </div>
+
+                <label for="msg-input">Digite a mensagem:</label>
+                <textarea id="msg-input" class="msg" name="msg-output" rows="5" placeholder="Digite a mensagem aqui"></textarea>
+                <button id="btn" class="btn" type="submit" value="codificar!">codificar mensagem!</button>
+
+                <label for="msg-output">Veja o resultado:</label>
+                <textarea id="msg-output" name="msg-output" class="msg" rows="5" placeholder="O resultado vai aparecer aqui"></textarea>
             </form>
         </fieldset>
     </main>
     <footer>
-        Desenvolvido exclusivamente para fins didáticos, por Alonso Estevam | Resilia - T17
+        <p>Desenvolvido exclusivamente para fins didáticos, por Alonso Estevam | Resilia - T17</p>
     </footer>
-    <script src="index.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 </html>
+
+<!-- 
+    O formulário deve conter: 
+    - Um campo de entrada textual, da mensagem que será codificada ou
+    decodificada;
+    - Um campo de seleção, com as opções "cifra de césar" e "base64" com o seguinte comportamento:
+        ■ Com "cifra de césar" ativo na seleção, um novo campo deve surgir no formulário para que seja possível fornecer o incremento
+        utilizado na cifra;
+        ■ Dois campos radiais (radio buttons) com os textos: "codificar" e "decodificar"
+        ■ Um botão que, com "codificar" selecionado exibe o texto "Codificar Mensagem!" e com "decodificar" selecionado exibe "Decodificar Mensagem!"
+        ■ Um outro campo textual deve ser utilizado na página para que o
+        resultado da codificação e decodificação possa ser exibido para a
+        pessoa usuária.
+
+ -->
