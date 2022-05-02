@@ -106,7 +106,7 @@ console.log(vowels); // array com os elementos reordenados de acordo com a chave
 
 
 // QUARTA TENTATIVA
-let msg = 'pastel e cuscuz'; // variável que recebe a string da mensagem
+let msg = 'tewxip'; // variável que recebe a string da mensagem
 
 let arr = msg.split('') // converte a string em array
 
@@ -115,13 +115,13 @@ let arrCharCode = arr.map(function(item) {
 }) 
 console.log(arrCharCode); 
 
-let key = 3;
+let key = 4;
 
 let newArrCharCode = arrCharCode.map(function(item){
     if(item == 32) {
         return item = 32;
     } else {
-        return (((item - 97) + key) % 26) + 97
+        return (((item - 97) - key) % 26) + 97
     }
 })
 
@@ -137,7 +137,7 @@ let codedMsg = codedArr.join('')
 console.log(codedArr);
 console.log(codedMsg);
 
-console.log(' '.charCodeAt());
+//console.log(' '.charCodeAt());
 
 
 // fórmula
