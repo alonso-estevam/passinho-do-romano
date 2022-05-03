@@ -75,6 +75,12 @@ select.addEventListener('change', function () {
 
 // CÓDIGO PRINCIPAL    
 // Codificar / Decodificar
+function alertaCampoVazio (input) {
+    if (input === '' || input === null) {
+        alert ("Digite alguma mensagem!")
+    }
+}
+
 submit.addEventListener('click', function (event) {
     // previne o comportamento de recarregar a página
     event.preventDefault();
@@ -84,6 +90,7 @@ submit.addEventListener('click', function (event) {
         if (select.value == 1) {
             // pega a mensagem digitada
             var input = document.querySelector('#msg-input').value;
+            alertaCampoVazio (input);
             // pega o número de passos e converte para number
             var key = Number(document.querySelector('#keyBox').value);
             // previne o erro de não colocar número ou colocar acima de 25
@@ -123,7 +130,7 @@ submit.addEventListener('click', function (event) {
         } else if (select.value == 2) {
             // pega a mensagem digitada
             var input = document.querySelector('#msg-input').value;
-
+            alertaCampoVazio (input);
             // define uma variável para mostrar o resultado
             var codedMsg = document.querySelector('#msg-output');
 
@@ -137,7 +144,7 @@ submit.addEventListener('click', function (event) {
         if (select.value == 1) {
             // pega a mensagem digitada
             var input = document.querySelector('#msg-input').value;
-
+            alertaCampoVazio (input);
             // pega o número de passos e converte para number
             var key = Number(document.querySelector('#keyBox').value);
 
@@ -178,7 +185,7 @@ submit.addEventListener('click', function (event) {
         } else {
             // pega a mensagem codificada
             var input = document.querySelector('#msg-input').value;
-
+            alertaCampoVazio (input);
             // cria uma variável para armazenar o resultado
             var codedMsg = document.querySelector('#msg-output');
 
@@ -190,3 +197,5 @@ submit.addEventListener('click', function (event) {
         alert ("Selecione codificar ou decodificar!")
     }
 })
+
+
