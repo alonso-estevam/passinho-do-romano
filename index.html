@@ -10,11 +10,15 @@
     <title>Passinho do Romano</title>
 </head>
 <body>
-    <header class="header">
-        <img class="logo"src="assets/img/caesar.png" alt="perfil de Júlio César">
-        <h1 class="title">Passinho do Romano</h1>
+    <header>
+        <div class="border"></div>
+        <div class="header">
+            <img class="logo"src="assets/img/caesar.png" alt="perfil de Júlio César">
+            <h1 class="title">Passinho do Romano</h1>
+        </div>
+        <div class="border"></div>
     </header>
-    <p>Codifique e decodifique mensagens usando dois métodos marotos: a <strong>Cifra de César</strong> e a <strong>Base64</strong>.</p>
+    <p class="initial-text">Codifique e decodifique mensagens usando dois métodos marotos: a <strong>Cifra de César</strong> e a <strong>Base64</strong>.</p>
     <section>
         <div class="subtitle">
             <h2>Como funciona?</h2>
@@ -25,7 +29,7 @@
                 <li>escolha se quer <strong>codificar</strong> ou <strong>decodificar</strong> uma mensagem;</li>
                 <li>selecione o método - Cifra de César ou Base64;</li>
                 <li>se optar pela <strong>Cifra de César</strong>, escolha também o número de passinhos (<strong>chave</strong>);</li>
-                <li>digite o texto da mensagem (<strong>somente letras minúsculas e espaços!</strong>)</li>
+                <li>digite o texto da mensagem - no caso da Cifra de César, <strong>somente letras (sem acentos) e espaços!</strong></li>
                 <li>clique no botão de codificar/decodificar.</li>
             </ol>
         </div>
@@ -37,24 +41,32 @@
         </div>
         <form action="#" class="form">
             <fieldset>
-                <div>
+                <div class="de-code">
                     <label for="code">Você quer:</label>
-                    <input type="radio" name="de-code" id="code" value="codificar">
-                    <label for="code">codificar</label>
-                    <input type="radio" name="de-code" id="decode" value="decodificar">
-                    <label for="decode">decodificar</label>
+                    <div>
+                        <img src="assets/img/code.png" alt="">
+                        <input type="radio" name="de-code" id="code" value="codificar">
+                        <label for="code" class="radio">codificar</label>
+                    </div>
+                    <div>
+                        <img src="assets/img/decode.png" alt="">
+                        <input type="radio" name="de-code" id="decode" value="decodificar">
+                        <label for="decode" class="radio">decodificar</label>
+                    </div>
                 </div>
 
                 <label for="selection">Escolha o método:</label>
                 <select name="selection" id="selection" class="selection">
                     <option value="1" id="cifraDeCesar" class="value">Cifra de César</option>
-                    <option value="2" id="base64" class="value">Base64</option>
+                    <option value="2" id="base64" class="value">Base64</option> <br>
                 </select>
                 <div class="key" id="key"> <!-- deu certo a função pra esconder quando coloquei a id nessa div -->
+                    <br>
                     <label for="keyBox">Selecione o número de passinhos:</label>
                     <input type="number" id="keyBox" class="msg keyBox" min="1" max="25" required>
                 </div>
 
+                <br>
                 <label for="msg-input" id="label-msg-input">Digite a mensagem: <br>
                 </label>
                 <textarea id="msg-input" class="msg" name="msg-output" rows="5" placeholder="Digite a mensagem aqui"></textarea>
@@ -68,6 +80,10 @@
     </main>
     <footer>
         <p>Desenvolvido exclusivamente para fins didáticos, por Alonso Estevam | Resilia - T17</p>
+        <nav>
+            <a href="https://github.com/alonso-estevam"><img src="assets/img/github.png" alt="logo do github"></a>
+            <a href="https://www.linkedin.com/in/alonso-estevam/"><img src="assets/img/linkedin.png" alt="logo do linkedin"></a>
+        </nav>
     </footer>
     <script src="assets/js/script.js"></script>
 </body>

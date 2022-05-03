@@ -34,7 +34,7 @@ submit.addEventListener('click', function (event) {
         if (select.value == 1) {
             // pega a mensagem digitada
             var input = document.querySelector('#msg-input').value;
-            console.log(input);
+    
             // pega o número de passos e converte para number
             var key = Number(document.querySelector('#keyBox').value);
             if (key < 1 || key > 25) {
@@ -50,9 +50,14 @@ submit.addEventListener('click', function (event) {
                     if (item == 32) {
                         // trata a questão do unicode do espaço
                         return item = 32;
-                    } else {
+                    // para letras maiúsculas
+                    } else if (item >= 65 && item <= 90) {
                         //retorna o novo unicode após a soma dos passos
-                        return (((item - 97) + key) % 26) + 97
+                        return (((item - 65) + key) % 26) + 65;
+                    // para letras minúsculas
+                    } else if (item >= 97 && item <= 122) {
+                        //retorna o novo unicode após a soma dos passos
+                        return (((item - 97) + key) % 26) + 97;
                     }
                 })
                 var codedArr = newArrCharCode.map(function (item) {
@@ -78,7 +83,7 @@ submit.addEventListener('click', function (event) {
         }
 
         // para DECODIFICAR
-    } else {
+    } else if (submit.innerText == "decodificar mensagem!") {
         // se for cifra de césar...
         if (select.value == 1) {
             // pega a mensagem digitada
@@ -93,13 +98,17 @@ submit.addEventListener('click', function (event) {
                 // retorna o unicode dos itens do array
                 return item.charCodeAt()
             })
-            console.log(arrCharCode);
             var newArrCharCode = arrCharCode.map(function (item) {
                 if (item == 32) {
                     // trata a questão do unicode do espaço
                     return item = 32;
-                } else {
+                    // para letras maiúsculas
+                } else if (item >= 65 && item <= 90) {
                     //retorna o unicode decodificado
+                    return (((item - 65) - (key - 26)) % 26) + 65;
+                    // para letras minúsculas
+                } else if (item >= 97 && item <= 122) {
+                    // retorna o unicode decodificado
                     return (((item - 97) - (key - 26)) % 26) + 97;
                 }
             })
@@ -124,5 +133,7 @@ submit.addEventListener('click', function (event) {
             // mostra a mensagem decodificada
             codedMsg.value = atob(input);
         }
+    } else {
+        alert ("Selecione codificar ou decodificar!");
     }
 })

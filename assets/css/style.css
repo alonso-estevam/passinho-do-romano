@@ -1,6 +1,9 @@
 /* Reset css */
 body, html {
+    max-width: 100%;
+    overflow-x: hidden;
     height: 100%;
+    width: 100vw;
     width: 100vw;
     padding: 0px;
     margin: 0px;
@@ -12,8 +15,10 @@ body {
     background-color: #f5c072;
     color: #700600;
     font-family: 'Radio Canada', sans-serif;
-    margin-left: 15px;
-    margin-right: 15px;
+}
+
+header {
+    width: 80vw;
 }
 
 .header {
@@ -21,6 +26,13 @@ body {
     margin-top: 20px;
     display: flex;
     justify-content: space-evenly;
+}
+
+.border {
+    height: 24px;
+    width: 100vw;
+    margin: 10px auto;
+    background-image: url('../../assets/img/colosseum.png');
 }
 
 .logo {
@@ -47,18 +59,19 @@ h2 {
     font-weight: normal;
 }
 
-p {
+.initial-text {
     width: 85vw;
     padding: 10px;
     border: 1px solid #aa2b24;
     border-radius: 10px;
+    box-shadow: 5px 3px 5px #aa2b24;
 }
 
 .list  {
-    width: 85vw;
     padding: 10px;
     border: 1px solid #aa2b24;
     border-radius: 10px;
+    box-shadow: 5px 3px 5px #aa2b24;
 }
 
 ol {
@@ -69,6 +82,20 @@ fieldset {
     font-size: 1.3rem;
     display: flex;
     flex-direction: column;
+    border: 1px solid #aa2b24;
+    border-radius: 10px;
+    box-shadow: 5px 3px 5px #aa2b24;
+}
+
+.de-code {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+label.radio {
+    font-size: 0.9em;
+    padding-right: 10px;
 }
 
 .msg {
@@ -77,11 +104,14 @@ fieldset {
     border-color: white #f7f7f7 #f5f5f5;
     border-radius: 10px;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08);
+    font-size: 1em;
+    font-family: 'Radio Canada', sans-serif;
 }
 
 .keyBox {
     margin: 15px 0;
     height: 25px;
+    width: 100px;
 }
 
 .selection {
@@ -97,8 +127,8 @@ fieldset {
   }
 
 .btn {
-    margin: 15px 0;
-    height: 35px;
+    margin: 15px auto;
+    height: 40px;
     width: 250px;
     font-family: 'Radio Canada', sans-serif;
     font-size: 0.8em;
@@ -106,9 +136,63 @@ fieldset {
     border: 1px solid #f7f7f7;
     border-radius: 10px;
     background-color: #96251f;
+    
 }
 
 .btn:hover {
     cursor: pointer;
     background-color: #ff5353;
+}
+
+::-webkit-input-placeholder  { 
+    color:#aa2b24;
+    font-family: 'Radio Canada', sans-serif;
+    font-style: italic;
+    font-size: 0.7em;
+}
+input:-moz-placeholder { color:#aa2b24;}
+textarea:-moz-placeholder { color:#aa2b24;}
+textarea:-moz-placeholder { color:#aa2b24;}
+
+footer {
+    text-align: center;
+    font-size: 0.9em;
+    margin: 15px auto;
+}
+
+/* Responsividade para tablet */
+@media (min-width: 600px) {
+    .title {
+        font-size: 1.6em;
+    }
+
+    .de-code {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    fieldset, .list, p, .subtitle {
+        width: 80vw;
+        margin: 0 auto;
+    }
+}
+
+/* Responsividade para desktop */
+@media (min-width: 769px) {
+    .header {
+        display: flex;
+        justify-content: left;
+        gap: 30px;
+        text-align: center;
+        margin-left: 30%;
+        margin-right: 0;
+        width: 600px;
+    }   
+
+    fieldset, .list, .initial-text, .subtitle {
+        width: 700px;
+        margin: 0 auto;
+    }
+
 }
