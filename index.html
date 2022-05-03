@@ -41,7 +41,7 @@
         </div>
         <form action="#" class="form">
             <fieldset>
-                <div class="de-code">
+                <div class="container">
                     <label for="code">Você quer:</label>
                     <div>
                         <img src="assets/img/code.png" alt="">
@@ -69,12 +69,24 @@
                 <br>
                 <label for="msg-input" id="label-msg-input">Digite a mensagem: <br>
                 </label>
-                <textarea id="msg-input" class="msg" name="msg-output" rows="5" placeholder="Digite a mensagem aqui"></textarea>
+                <div class="container">
+                    <textarea id="msg-input" class="msg" name="msg-output" rows="5" placeholder="Digite a mensagem aqui"></textarea>
+                    <img src="assets/img/coded_message.png" class="img-txtarea">
+                </div>
 
-                <button id="btn" class="btn" type="submit" value="">esperando...</button>
+                <div class="container">
+                    <div id="btn-submit" class="btn-submit"><button id="btn" class="btn main" type="submit" value="">esperando...</button></div>
+                    <div class="btn-submit">
+                        <button id="btn-reset" class="btn" type="reset">resetar</button>
+                        <img src="assets/img/redo.png" alt="">
+                    </div>
+                </div>
 
                 <label for="msg-output">Veja o resultado:</label>
-                <textarea id="msg-output" name="msg-output" class="msg" rows="5" placeholder="O resultado vai aparecer aqui"></textarea>
+                <div class="container">
+                    <textarea id="msg-output" name="msg-output" class="msg" rows="5" placeholder="O resultado vai aparecer aqui"></textarea>
+                    <img src="assets/img/results.png" class="img-txtarea">
+                </div>
             </form>
         </fieldset>
     </main>
